@@ -1,11 +1,11 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.6.1
-Release:	1
+Version:	3.6.2
+Release:	2
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	05a16c52b7fe44883c4032cb0357dde5
+# Source0-md5:	df8f12afd088674bff1664c3fd6619c0
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -20,75 +20,6 @@ BuildRequires:	rarian
 BuildRequires:	xkeyboard-config
 Requires(post,postun):	rarian
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	accountsservice
-Requires:	baobab
-Requires:	brasero
-Requires:	browser-plugin-gnome-shell
-Requires:	caribou
-Requires:	cheese
-Requires:	colord
-Requires:	dconf-editor
-Requires:	empathy
-Requires:	eog
-Requires:	epiphany
-Requires:	epiphany-extensions
-Requires:	evince
-Requires:	evolution
-Requires:	file-roller
-Requires:	folks
-Requires:	gcalctool
-Requires:	gdm
-Requires:	gedit
-Requires:	gjs
-Requires:	glib-networking
-Requires:	gnome-backgrounds
-Requires:	gnome-bluetooth
-Requires:	gnome-color-manager
-Requires:	gnome-contacts
-Requires:	gnome-control-center
-Requires:	gnome-disk-utility
-Requires:	gnome-documents
-Requires:	gnome-games-lightsoff
-Requires:	gnome-games-mahjongg
-Requires:	gnome-games-quadrapassel
-Requires:	gnome-games-swell-foop
-Requires:	gnome-icon-theme
-Requires:	gnome-keyring
-Requires:	gnome-menus
-Requires:	gnome-online-accounts
-Requires:	gnome-panel
-Requires:	gnome-power-manager
-Requires:	gnome-screensaver
-Requires:	gnome-screenshot
-Requires:	gnome-session
-Requires:	gnome-settings-daemon
-Requires:	gnome-shell
-Requires:	gnome-system-log
-Requires:	gnome-terminal
-Requires:	gnome-themes-standard
-Requires:	gsettings-desktop-schemas
-Requires:	gtk+3
-Requires:	gucharmap
-Requires:	gvfs
-Requires:	libcanberra-runtime
-Requires:	libgnomekbd-runtime
-Requires:	libproxy-gnome3
-Requires:	libsocialweb
-Requires:	metacity
-Requires:	mutter
-Requires:	nautilus
-Requires:	nautilus-extension-brasero
-Requires:	notification-daemon
-Requires:	polkit-gnome
-Requires:	pulseaudio
-Requires:	seahorse
-Requires:	shared-color-profiles
-Requires:	simple-scan
-Requires:	sound-juicer
-Requires:	telepathy-gabble
-Requires:	telepathy-salut
-Requires:	totem
-Requires:	yelp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/%{name}
@@ -151,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,kg,ug,yo}
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,kg,nds,ug,yo}
 
 %find_lang %{name} --with-gnome --with-omf --all-name
 
