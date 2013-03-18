@@ -1,11 +1,11 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.6.2
-Release:	2
+Version:	3.6.3
+Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	df8f12afd088674bff1664c3fd6619c0
+# Source0-md5:	bdfa91c3ddbe29bc9e0a5000637ee35e
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -18,7 +18,6 @@ BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	rarian
 BuildRequires:	xkeyboard-config
-Requires(post,postun):	rarian
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -84,16 +83,10 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,kg,nds,ug,yo}
 
-%find_lang %{name} --with-gnome --with-omf --all-name
+%find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -fr $RPM_BUILD_ROOT
-
-%post
-%scrollkeeper_update_post
-
-%postun
-%scrollkeeper_update_postun
 
 %post	libs -p /usr/sbin/ldconfig
 %postun	libs -p /usr/sbin/ldconfig
