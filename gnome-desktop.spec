@@ -1,11 +1,11 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.6.3
+Version:	3.8.0.1
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	bdfa91c3ddbe29bc9e0a5000637ee35e
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	16dc5d4d30e1bcd58a4169152ddeed02
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -110,7 +110,6 @@ rm -fr $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so
 %{_datadir}/gir-1.0/GnomeDesktop-3.0.gir
-%{_libdir}/libgnome-desktop-3.la
 %{_includedir}/gnome-desktop-3.0
 %{_pkgconfigdir}/gnome-desktop-3.0.pc
 
