@@ -1,11 +1,11 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.8.3
+Version:	3.8.4
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	4d5bed79011826f62fda582d07d6fef5
+# Source0-md5:	233350635fe7f041070d0a74a57ce79e
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
