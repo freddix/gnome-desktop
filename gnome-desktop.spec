@@ -1,24 +1,25 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.8.4
+Version:	3.10.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	233350635fe7f041070d0a74a57ce79e
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.10/%{name}-%{version}.tar.xz
+# Source0-md5:	d9fd5ab4f8432c0a8876ed950565e0fb
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-doc-utils
-BuildRequires:	gsettings-desktop-schemas-devel
-BuildRequires:	gtk+3-devel
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.10.0
+BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	pkg-config
-BuildRequires:	rarian
+BuildRequires:	xorg-libxkbfile-devel
 BuildRequires:	xkeyboard-config
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	gsettings-desktop-schemas >= 3.10.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/%{name}
@@ -81,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,kg,nds,ug,yo}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,kg,nds,ug,yo}
 
 %find_lang %{name} --with-gnome --all-name
 
