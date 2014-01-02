@@ -1,11 +1,11 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.10.1
+Version:	3.10.2
 Release:	1
 License:	LGPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	97cc7a69b1f9bc67d0e2c591627028bc
+# Source0-md5:	f610e6a0c0fe288100ea8e78c01ed0ca
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
