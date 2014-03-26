@@ -1,17 +1,16 @@
 Summary:	GNOME desktop
 Name:		gnome-desktop
-Version:	3.10.2
+Version:	3.12.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.10/%{name}-%{version}.tar.xz
-# Source0-md5:	f610e6a0c0fe288100ea8e78c01ed0ca
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.12/%{name}-%{version}.tar.xz
+# Source0-md5:	d4435879a3eab6c4ea39952cd02072c1
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-doc-utils
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.10.0
-BuildRequires:	gtk+3-devel >= 3.10.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.12.0
+BuildRequires:	gtk+3-devel >= 3.12.0
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	libtool
@@ -19,7 +18,7 @@ BuildRequires:	pkg-config
 BuildRequires:	xorg-libxkbfile-devel
 BuildRequires:	xkeyboard-config
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	gsettings-desktop-schemas >= 3.10.0
+Requires:	gsettings-desktop-schemas >= 3.12.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/%{name}
@@ -62,7 +61,6 @@ sed -i -e 's/GNOME_COMPILE_WARNINGS.*//g'	\
 %build
 %{__gtkdocize}
 %{__intltoolize}
-%{__gnome_doc_prepare}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
@@ -82,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{ca@valencia,crh,en@shaw,ig,kg,nds,ug,yo}
 
 %find_lang %{name} --with-gnome --all-name
@@ -103,7 +102,7 @@ rm -fr $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.?
+%attr(755,root,root) %ghost %{_libdir}/libgnome-desktop-3.so.10
 %attr(755,root,root) %{_libdir}/libgnome-desktop-3.so.*.*.*
 %{_libdir}/girepository-1.0/GnomeDesktop-3.0.typelib
 
