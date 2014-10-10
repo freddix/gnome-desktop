@@ -1,16 +1,16 @@
-Summary:	GNOME desktop
+Summary:	Library with common API for various GNOME modules
 Name:		gnome-desktop
-Version:	3.12.1
+Version:	3.14.0
 Release:	1
 License:	LGPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	81a33b246d1b35f8ea8fbb14f878d550
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-desktop/3.14/%{name}-%{version}.tar.xz
+# Source0-md5:	fe8e368cc1cae842d95a69de08ed2ea9
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.12.0
-BuildRequires:	gtk+3-devel >= 3.12.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.14.0
+BuildRequires:	gtk+3-devel >= 3.14.0
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
 BuildRequires:	libtool
@@ -18,7 +18,7 @@ BuildRequires:	pkg-config
 BuildRequires:	xorg-libxkbfile-devel
 BuildRequires:	xkeyboard-config
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	gsettings-desktop-schemas >= 3.12.0
+Requires:	gsettings-desktop-schemas >= 3.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/%{name}
